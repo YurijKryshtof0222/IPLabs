@@ -153,25 +153,26 @@ public class FoldMatrix {
             }
         }
 
-        return findMinCell(required);
+        return findCell(required);
     }
 
     public Cell findCellAtIndex(int index) {
-        return findMinCell(values()[index]);
+        return findCell(values()[index]);
     }
 
-    private Cell findMinCell(double required) {
+    private Cell findCell(double requiredValue) {
+        int state = 0;
         for (CellInfo cellInfo: cellAndValueList()) {
-            if (cellInfo.getResult() == required) {
-                return cellInfo.getCell();
+            if (cellInfo.getResult() == requiredValue) {
+                state = cellInfo.getState();
+                Cell cell = cellInfo.getCell();
+                System.out.printf("%s.)state = %d, value = %.2f,\t i=%s,j=%s, %s %n" ,
+                        name, state, requiredValue, firstInputName, secondInputName, cell);
+                return cell;
             }
         }
 
         return null;
-    }
-
-    public void printMinCell() {
-
     }
 
     public void printCellAndValueList() {

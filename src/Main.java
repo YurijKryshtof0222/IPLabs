@@ -6,6 +6,7 @@ public class Main {
 
         TreeSet<Integer> p5 = new TreeSet<>();
         p5.add(5);
+
         FoldMatrix p4_p3 = new FoldMatrix(Constants.folds1, p5, "P4", "P3", "P5");
         FoldMatrix p2_k2 = new FoldMatrix(Constants.folds2, p4_p3.getFirst(), "P2", "K2", "P4");
         FoldMatrix p1_k3 = new FoldMatrix(Constants.folds3, p4_p3.getSecond(), "P1", "K3", "P3");
@@ -37,12 +38,6 @@ public class Main {
         Cell min_p3 = p1_k3.findCellAtIndex(min_p5.getJ());
         Cell min_p2 = k4_k3.findCellAtIndex(min_p4.getI());
         Cell min_p1 = k2_k1.findCellAtIndex(min_p3.getI());
-
-        System.out.println(min_p5);
-        System.out.println(min_p4);
-        System.out.println(min_p3);
-        System.out.println(min_p2);
-        System.out.println(min_p1);
     }
 
 }
