@@ -31,6 +31,18 @@ public class Main {
         p1_k3.printCellAndValueList();
         p2_k2.printCellAndValueList();
         p4_p3.printCellAndValueList();
+
+        Cell min_p5 = p4_p3.findFirstMinCell();
+        Cell min_p4 = p2_k2.findCellAtIndex(min_p5.getI());
+        Cell min_p3 = p1_k3.findCellAtIndex(min_p5.getJ());
+        Cell min_p2 = k4_k3.findCellAtIndex(min_p4.getI());
+        Cell min_p1 = k2_k1.findCellAtIndex(min_p3.getI());
+
+        System.out.println(min_p5);
+        System.out.println(min_p4);
+        System.out.println(min_p3);
+        System.out.println(min_p2);
+        System.out.println(min_p1);
     }
 
 }

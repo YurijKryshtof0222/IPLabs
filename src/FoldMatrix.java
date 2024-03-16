@@ -143,6 +143,37 @@ public class FoldMatrix {
         return result;
     }
 
+    public Cell findFirstMinCell() {
+        double required = Double.MAX_VALUE;
+
+        double[] values = values();
+        for (int i = 0; i < values().length; i++) {
+            if (values[i] != 0 && required > values[i]) {
+                required = values[i];
+            }
+        }
+
+        return findMinCell(required);
+    }
+
+    public Cell findCellAtIndex(int index) {
+        return findMinCell(values()[index]);
+    }
+
+    private Cell findMinCell(double required) {
+        for (CellInfo cellInfo: cellAndValueList()) {
+            if (cellInfo.getResult() == required) {
+                return cellInfo.getCell();
+            }
+        }
+
+        return null;
+    }
+
+    public void printMinCell() {
+
+    }
+
     public void printCellAndValueList() {
         for (CellInfo cellInfo: cellAndValueList()) {
             System.out.println(cellInfo);
