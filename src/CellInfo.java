@@ -26,7 +26,7 @@ public class CellInfo {
         return "CellInfo{" +
                 "cell=" + cell +
                 ", state=" + state +
-                ", result=" + result +
+                ", result=" + String.format("%.2f", result) +
                 '}';
     }
 }

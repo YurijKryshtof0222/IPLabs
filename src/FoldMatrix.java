@@ -166,8 +166,8 @@ public class FoldMatrix {
             if (cellInfo.getResult() == requiredValue) {
                 state = cellInfo.getState();
                 Cell cell = cellInfo.getCell();
-                System.out.printf("%s.)state = %d, value = %.2f,\t i=%s,j=%s, %s %n" ,
-                        name, state, requiredValue, firstInputName, secondInputName, cell);
+                System.out.printf("%s.)state = %d; \t i=%s,j=%s; %s value = %.2f %n" ,
+                        name, state, firstInputName, secondInputName, cell, requiredValue);
                 return cell;
             }
         }
@@ -176,6 +176,8 @@ public class FoldMatrix {
     }
 
     public void printCellAndValueList() {
+
+        System.out.printf("%s <-\ti=%s; j=%s %n", name, firstInputName, secondInputName);
         for (CellInfo cellInfo: cellAndValueList()) {
             System.out.println(cellInfo);
         }
@@ -191,10 +193,8 @@ public class FoldMatrix {
             }
             System.out.println();
         }
-        Pair<TreeSet<Integer>, TreeSet<Integer>> pairOfTenses = statesOfTenses;
-        TreeSet<Integer> firstOfTenses = pairOfTenses.getFirst();
-        TreeSet<Integer> secondOfTenses = pairOfTenses.getSecond();
 
+        System.out.printf("\t\ti=%s; j=%s %n", firstInputName, secondInputName);
         for (Map.Entry<Integer, ArrayList<Cell>> entrySet : stateAndCellsMap.entrySet()) {
             System.out.print(entrySet.getKey() + ".)");
             for (Cell cell: entrySet.getValue()) {
@@ -202,6 +202,11 @@ public class FoldMatrix {
             }
             System.out.println();
         }
+
+        Pair<TreeSet<Integer>, TreeSet<Integer>> pairOfTenses = statesOfTenses;
+        TreeSet<Integer> firstOfTenses = pairOfTenses.getFirst();
+        TreeSet<Integer> secondOfTenses = pairOfTenses.getSecond();
+
         System.out.printf("%s = %s, %s = %s\n\n", firstInputName, firstOfTenses, secondInputName, secondOfTenses);
     }
 
