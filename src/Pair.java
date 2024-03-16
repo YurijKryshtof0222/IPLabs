@@ -1,8 +1,8 @@
-public class Pair<T> {
+public class Pair<T, E> {
     private final T first;
-    private final T second;
+    private final E second;
 
-    public Pair(T first, T second) {
+    public Pair(T first, E second) {
         this.first = first;
         this.second = second;
     }
@@ -11,7 +11,7 @@ public class Pair<T> {
         return first;
     }
 
-    public T getSecond() {
+    public E getSecond() {
         return second;
     }
 }

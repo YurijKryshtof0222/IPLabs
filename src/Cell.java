@@ -14,4 +14,12 @@ public class Cell {
     public int getJ() {
         return j;
     }
+
+    @Override
+    public String toString() {
+        return "Cell[" +
+                "i=" + (i+1) +
+                ", j=" + (j+1) +
+                ']';
+    }
 }
