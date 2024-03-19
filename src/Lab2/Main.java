@@ -8,7 +8,7 @@ public class Main {
     private static int rows = 3;
     private static int colms = 60;
 
-    private static String str = "Також_бажаємо_здоров'я_і_щастя!\nЩоб_Вас_не_торкнулось_жодне_нещастя!\nБо_люди_веселі_його_проженуть,\nІ_тільки_здоров'я_з_собою_беруть!\nКриштоф_Юрій_Тарасович__!!!!!!!!!!!!!!!!!!!!!!";
+    private static String str = "Також бажаємо здоров'я і щастя!\nЩоб Вас не_торкнулось жодне нещастя!\nБо_люди веселі його проженуть,\nІ тільки здоров'я з собою беруть!\nКриштоф Юрій Тарасович  !!!!!!!!!!!!!!!!!!!!!!";
     private static String code = "160131171832331946340235474803490405205051062136520722375308233854092439551025404111262742284344562957451258591314603015";
 
     private static int[][] codeStr = new int[3][60];
@@ -42,17 +42,17 @@ public class Main {
                 l++;
             }
         }
-        System.out.println("");
+        System.out.println();
         System.out.println("Decoded into Symbols: ");
         System.out.println(decodeFromWindows1251(arr));
     }
 
     private static void codeInInt () {
-        System.out.println("");
+        System.out.println();
         System.out.println("Coded symbols: ");
         printMatrix(multiplyMatrices(codeStr, T));
         coded = multiplyMatrices(codeStr, T);
-        System.out.println("");
+        System.out.println();
         System.out.println("Decoded Str: ");
         int[] arr = new int[180];
         int l = 0;
