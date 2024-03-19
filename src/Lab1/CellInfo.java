@@ -1,3 +1,5 @@
+package Lab1;
+
 public class CellInfo {
     private Cell cell;
     private int state;

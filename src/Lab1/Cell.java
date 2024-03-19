@@ -1,3 +1,5 @@
+package Lab1;
+
 public class Cell {
     private final int i;
     private final int j;

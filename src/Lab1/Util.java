@@ -1,3 +1,5 @@
+package Lab1;
+
 public final class Util {
     public static int[][] reversed(int[][] matrix) {
         int[][] result = new int[matrix.length][matrix[0].length];

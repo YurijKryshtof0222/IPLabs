@@ -1,3 +1,5 @@
+package Lab1;
+
 import java.util.*;
 
 public class FoldMatrix {
@@ -115,7 +117,7 @@ public class FoldMatrix {
     public List<CellInfo> cellAndValueList() {
         List<CellInfo> result = new ArrayList<>();
 
-        // private TreeMap<Integer, ArrayList<Cell>> stateAndCellsMap;
+        // private TreeMap<Integer, ArrayList<Lab1.Cell>> stateAndCellsMap;
         for (Map.Entry<Integer, ArrayList<Cell>> mapEntry: stateAndCellsMap.entrySet()) {
             int state = mapEntry.getKey();
             for (Cell cell: mapEntry.getValue()) {

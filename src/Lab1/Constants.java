@@ -1,3 +1,5 @@
+package Lab1;
+
 public class Constants {
     public static final double[][] costs = {
             {221.3,	480.1,	641.6,	939.5,	1156.9},

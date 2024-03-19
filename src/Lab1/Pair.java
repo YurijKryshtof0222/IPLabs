@@ -1,3 +1,5 @@
+package Lab1;
+
 public class Pair<T, E> {
     private final T first;
     private final E second;
