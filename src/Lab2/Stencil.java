@@ -62,12 +62,12 @@ public class Stencil {
         return Util.copyMatrix(encodeMatrix);
     }
 
-    public String code() {
+    public String key() {
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < encodeMatrix.length; i++ ) {
             for (int j = 0; j < encodeMatrix[i].length; j++) {
-                int character = encodeMatrix[i][j];
+                int character = encodeMatrix[i][j] + 1;
                 if (character < 10) {
                     result.append(0).append(character);
                 } else {

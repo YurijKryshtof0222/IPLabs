@@ -11,12 +11,16 @@ public class Main {
                 {0,	0,	1,	0,	0,	1,	1,	0,	0,	1}
         });
         Stencil stencil = new Stencil(matrix);
-        String textToEncode = "Також_бажаємо_здоров'я_і_щастя!¶Щоб_Вас_не_торкнулось_жодне_нещастя!¶Бо_люди_веселі_його_проженуть,¶І_тільки_здоров'я_з_собою_беруть!¶,,Криштоф_Юрій_Тарасович__!!!!!!!!!!!!!!!!!!!!";
 
-        Util.printMatrix(matrix.getMatrix());
-        stencil.printEncodeMatrix();
+        String textToEncode = "Також_бажаємо_здоров'я_і_щастя!\n" +
+                "Щоб_Вас_не_торкнулось_жодне_нещастя!\n" +
+                "Бо_люди_веселі_його_проженуть,\n" +
+                "І_тільки_здоров'я_з_собою_беруть!,\n" +
+                "Криштоф_Юрій_Тарасович__!?!?!?!?!?!?!?!?!?!?!";
+        Encoder encoder = new Encoder(stencil, textToEncode);
 
-        System.out.println();
-//        encoder.printCodeStr();
+        Util.printMatrix(stencil.getEncodeMatrix());
+        encoder.codeInInt();
+        encoder.decodeInCode();
     }
 }
