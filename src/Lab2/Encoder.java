@@ -8,8 +8,8 @@ public class Encoder {
     private int cols;
     private String textToEncode;
     private String key;
-    private int[][] strCode;
-    private int[][] coded;
+    private int[][] charCodes;
+    private int[][] encodedCodes;
     private int[] number;
     private int[][] T;
     private int[][] T1;
@@ -22,12 +22,14 @@ public class Encoder {
         this.textToEncode = textToEncode;
         this.key = stencil.key();
 
-        this.strCode = initStrCode();
-        this.coded = new int[rows][cols];
+        this.charCodes = initCharCode();
+        this.encodedCodes = new int[rows][cols];
         this.number = new int[cols];
 
         this.T = initT();
         this.T1 = initT1();
+
+        this.encodedCodes = Util.multiplyMatrices(charCodes, T);
     }
 
     private int[][] initT() {
@@ -70,7 +72,7 @@ public class Encoder {
         return result;
     }
 
-    private int[][] initStrCode() {
+    private int[][] initCharCode() {
         char[] charArray = textToEncode.toCharArray();
         int length = 0;
 
@@ -110,13 +112,12 @@ public class Encoder {
 
     public void codeInInt() {
         System.out.println("Coded symbols: ");
-        coded = Util.multiplyMatrices(strCode, T);
         System.out.println("Decoded Str: ");
         int[] arr = new int[rows * cols];
         int l = 0;
         for (int i = 0; i < rows; i++) {
             for (int y = 0; y < cols; y++) {
-                arr[l] = coded[i][y];
+                arr[l] = encodedCodes[i][y];
                 l++;
             }
         }
@@ -126,7 +127,7 @@ public class Encoder {
 
 
     public void decodeInCode() {
-        int[][] decoded = Util.multiplyMatrices(coded, T1);
+        int[][] decoded = Util.multiplyMatrices(encodedCodes, T1);
         int[] arr = new int[rows * cols];
         int l = 0;
         for (int i = 0; i < rows; i++) {

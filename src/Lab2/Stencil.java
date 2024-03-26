@@ -31,6 +31,11 @@ public class Stencil {
 
         int[][] result = new int[matrix.rows()][matrix.cols()];
 
+        Util.printMatrix(stencils[0]);
+        Util.printMatrix(stencils[1]);
+        Util.printMatrix(stencils[2]);
+        Util.printMatrix(stencils[3]);
+
         for (int i = 0; i < matrix.rows(); i++) {
             for (int j = 0; j < matrix.cols(); j++) {
                 for (int k = 0; k < fillValues.length; k++) {
