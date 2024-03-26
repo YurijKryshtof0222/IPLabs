@@ -35,7 +35,7 @@ public class Stencil {
             for (int j = 0; j < matrix.cols(); j++) {
                 for (int k = 0; k < fillValues.length; k++) {
                     if (stencils[k][i][j] != 0) {
-                        result[i][j] = fillValues[k]++;
+                        result[i][j] = ++fillValues[k];
                         break;
                     }
                 }
@@ -67,7 +67,7 @@ public class Stencil {
 
         for (int i = 0; i < encodeMatrix.length; i++ ) {
             for (int j = 0; j < encodeMatrix[i].length; j++) {
-                int character = encodeMatrix[i][j] + 1;
+                int character = encodeMatrix[i][j];
                 if (character < 10) {
                     result.append(0).append(character);
                 } else {

@@ -19,7 +19,10 @@ public class Main {
                 "Криштоф_Юрій_Тарасович__!?!?!?!?!?!?!?!?!?!?!";
         Encoder encoder = new Encoder(stencil, textToEncode);
 
+
         Util.printMatrix(stencil.getEncodeMatrix());
+
+        System.out.println("\nKey: " + stencil.key() + "\n");
         encoder.codeInInt();
         encoder.decodeInCode();
     }
