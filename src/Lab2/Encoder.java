@@ -125,7 +125,6 @@ public class Encoder {
     }
 
 
-
     public void decodeInCode() {
         int[][] decoded = Util.multiplyMatrices(encodedCodes, T1);
         int[] arr = new int[rows * cols];
